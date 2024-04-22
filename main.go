@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"go_json_utility/guitar"
 	"go_json_utility/parser"
 	"go_json_utility/writer"
-	"os"
 )
 
 func main() {
