@@ -1,18 +1,13 @@
-package main
+package parser
 
 import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"go_json_utility/guitar"
 )
 
-type Guitar struct {
-	Name string `json:"name`
-	Brand string `json:brand`
-	Year int `json:year`
-}
-
-func parse(filename string) error {
+func Parse(filename string, guitar* guitar.Guitar) error {
 	
 	data, err := os.ReadFile(filename)
 
@@ -21,8 +16,6 @@ func parse(filename string) error {
 		return err
 	}
 
-	var guitar Guitar
-
 	err = json.Unmarshal(data, &guitar)
 
 	if (err != nil) {
@@ -30,12 +23,12 @@ func parse(filename string) error {
 		return err
 	}
 
-	fmt.Println("Name: ", guitar.Name)
-	fmt.Println("Brand: ", guitar.Brand)
-	fmt.Println("Year: ", guitar.Year)
+
 
 	return nil
 }
+
+/*
 
 func main() {
 
@@ -52,3 +45,5 @@ func main() {
 
 	os.Exit(0)
 }
+
+*/
