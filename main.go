@@ -6,9 +6,16 @@ import (
 	"go_json_utility/guitar"
 	"go_json_utility/parser"
 	"go_json_utility/writer"
+
+	"crypto/rand"
+
 )
 
 func main() {
+
+	s := make([]byte, 10);
+	rand.Read(s);
+	fmt.Println("RUN ID: TEST-" + fmt.Sprintf("%x", s)[2 : 12]);
 
 	// take command line arguments
 	if (len(os.Args) < 3) {

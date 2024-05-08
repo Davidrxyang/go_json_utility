@@ -24,7 +24,6 @@ func Parse(filename string, guitar* guitar.Guitar) error {
 	}
 
 
-
 	return nil
 }
 
